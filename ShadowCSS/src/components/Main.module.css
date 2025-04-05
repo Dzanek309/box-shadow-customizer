@@ -1,0 +1,8 @@
+.main {
+    display: flex;
+    height: calc(100% - 35px);
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 800px;
+}

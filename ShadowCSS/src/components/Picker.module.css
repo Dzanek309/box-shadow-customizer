@@ -1,0 +1,156 @@
+.picker {
+    width: 500px;
+    height: 700px;
+    background-color: white;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.picker__title {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+.picker__content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: black;
+}
+
+.picker__content p {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.picker__content:last-of-type {
+    height: 100px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyButton {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: black;
+    border-radius: 0px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+/* Style for the thumb (the draggable part of the slider) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Default state - blank checkbox */
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+}
+
+/* Checkmark (X) when checked */
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Create the two diagonal lines to form an "X" */
+input[type="checkbox"]:checked::after,
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    width: 35px;
+    height: 4px;
+    background-color: black;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    /* Center the lines */
+}
+
+input[type="checkbox"]:checked::before {
+    transform: rotate(45deg);
+    /* First diagonal line (rotate 45 degrees) */
+}
+
+input[type="checkbox"]:checked::after {
+    transform: rotate(-45deg);
+    /* Second diagonal line (rotate -45 degrees) */
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+
+}
+
+/* Adding a custom background color when the color is selected */
+input[type="color"]::-webkit-color-swatch {
+    height: 50px;
+    width: 50px;
+}
